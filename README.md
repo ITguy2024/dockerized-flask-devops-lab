@@ -296,7 +296,7 @@ A recorded demonstration of the infrastructure covers:
 - Application health verification
 - Rollback approach
 
-Demo video: Coming soon
+Demo video: [Watch the DevOps Practical Demo](https://drive.google.com/file/d/1R-XR3r3-tQEQcKoXcnGQKfxXh7Pn4lTT/view?usp=sharing)
 
 ## What I Learned
 
