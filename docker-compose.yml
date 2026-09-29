@@ -3,7 +3,7 @@ services:
     build: .
     container_name: devops-flask-compose
     ports:
-      - "5000:5000"
+      - "127.0.0.1:5000:5000"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
       interval: 10s
