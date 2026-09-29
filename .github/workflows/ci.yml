@@ -1,0 +1,30 @@
+name: Docker CI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t devops-flask-app .
+
+      - name: Run Docker container
+        run: docker run -d --name devops-flask -p 5000:5000 devops-flask-app
+
+      - name: Wait for application
+        run: sleep 5
+
+      - name: Test health endpoint
+        run: curl --fail http://localhost:5000/health
+
+      - name: Show running containers
+        run: docker ps
